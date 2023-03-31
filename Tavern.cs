@@ -53,31 +53,29 @@ namespace Another_World_Adventure
                 Console.WriteLine("|    - (7) " + Food.HipponaxsPanckaes.ItemName + "          $" + Food.HipponaxsPanckaes.ItemPrice);
                 Console.WriteLine("|      " + Food.HipponaxsPanckaes.ItemDescription);
                 Console.WriteLine("|                      ");
-
                 Console.WriteLine("| (E)xit			      ");
                 Console.WriteLine("==============================================");
-                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(player.playerName + "'s Stats");
                 Console.WriteLine("=======================");
                 Console.WriteLine("| Current Health:      " + player.playerHealth);
                 Console.WriteLine("| 			          ");
-                Console.WriteLine("| Current Hunger:	  " + player.playerHunger);
+                Console.WriteLine("| Current Hunger:      " + player.playerHunger);
                 Console.WriteLine("| Current Soberness:   " + player.playerDrunkness);
                 Console.WriteLine("| 			          ");
                 Console.WriteLine("| Guild Affiliation:   " + player.playerGuildName);
                 Console.WriteLine("| Strength Skill:      " + player.playerStrength);
                 Console.WriteLine("| Knowledge Skill:     " + player.playerKnowledge);
-                Console.WriteLine("| Charm Skill:		  " + player.playerCharm);
+                Console.WriteLine("| Charm Skill:         " + player.playerCharm);
                 Console.WriteLine("| 			          ");
-                Console.WriteLine("| Weapon Name:		  " + player.playerWeaponName);
-                Console.WriteLine("| Weapon Type:		  " + player.playerWeaponType);
-                Console.WriteLine("| Weapon Strength:     " + player.playerStrength);
+                Console.WriteLine("| Weapon Name:         " + player.playerWeaponName);
+                Console.WriteLine("| Weapon Type:         " + player.playerWeaponType);
+                Console.WriteLine("| Weapon Strength:     " + player.playerWeaponStrength);
                 Console.WriteLine("| 			          ");
-                Console.WriteLine("| Potions:			  " + player.playerHealthPotion);
-                Console.WriteLine("| Coins:			      " + player.playerCoins);
+                Console.WriteLine("| Potions:             " + player.playerHealthPotion);
+                Console.WriteLine("| Coins:	              " + player.playerCoins);
                 Console.WriteLine("=======================");
-
+                Console.WriteLine();
                 //Wait for input
 
                 string tavernInput = Console.ReadLine();
@@ -123,6 +121,7 @@ namespace Another_World_Adventure
 
                 else if (tavernInput == "e" || tavernInput == "exit")
                 {
+                    Console.Clear();
                     break;
                 }
                 else if (tavernInput == "" || tavernInput == "")

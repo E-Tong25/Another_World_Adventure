@@ -127,7 +127,7 @@ namespace Another_World_Adventure
             Program.SlowTextAnimation("He shines a friendly smile, but you can't help but see fatigue and sadness in their eyes.");
             Console.ReadKey();
             Console.Clear();
-            Program.CynosCharacterDialog("\"You know, to show my sincere apologies, you can take a look at some of my wares to see if there's something you like.\"\n\"I was going to get rid of them anyways.\"");
+            Program.CynosCharacterDialog("\"You know, to show my sincerest apologies, you can take a look at some of my wares to see if there's something you like.\"\n\"I was going to get rid of them anyways.\"");
             Console.WriteLine();
             Program.SlowTextAnimation("Take a look? y/n");
             Console.WriteLine();
@@ -160,17 +160,16 @@ namespace Another_World_Adventure
                 }
             }
 
-            Console.ReadKey();
             Program.SlowTextAnimation("Cyno reties his bag and continues to the shop. As he walks away, he waves goodbye.");
             Console.WriteLine();
             Program.CynosCharacterDialog("\"I hope we meet again!\"");
-
-
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public static void CynosBagDisplay()
         {
-            Console.WriteLine("         Cynos Bag Display          ");
+            Console.WriteLine("                       Cynos Bag Display          ");
 
             Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("|  Weapons:                        ");
@@ -187,7 +186,7 @@ namespace Another_World_Adventure
             Console.WriteLine("|  Potions:                        ");
             Console.WriteLine("|                                  ");
             Console.WriteLine("|  " + Potions.Ambrosia.ItemName);
-            Console.WriteLine("|          Description: " + Potions.Ambrosia.ItemDescription);
+            Console.WriteLine("|  " + Potions.Ambrosia.PotionType+" Description: "+ Potions.Ambrosia.ItemDescription);
             Console.WriteLine("|                                  ");
             Console.WriteLine("----------------------------------------------------------------");
 
@@ -231,6 +230,7 @@ namespace Another_World_Adventure
                     Console.Clear();
                     Program.SlowTextAnimation("You pull the " + Potions.Ambrosia.ItemName + " out of the bag and into your small pouch.");
                     AmbrosiaPotionPlayerStatUpdate();
+                    Console.ReadKey();
                     Console.Clear();
                     break;
                 }
@@ -238,7 +238,6 @@ namespace Another_World_Adventure
                 {
                     Program.QsCharacterDialog("Please type sword, bow, spear, or potion.");
                     Console.ReadKey();
-                    Console.Clear();
                     continue;
                 }
             }

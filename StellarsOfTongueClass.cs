@@ -6,7 +6,6 @@ namespace Another_World_Adventure
         public static BaseCharacterGuildClass StellarsOfTongue = new BaseCharacterGuildClass("Stellars Of Tongue", "\"Beauty and charm is everything in this world. As a memeber of the Stellars Of Tongue Guild, festivitees formed by the valley's most beautiful and lusted are an everyday occurrence.\"\n|   \"Others around you flock to admire your beauty, but I doubt they'd come to you for stock advice.\"", 50, 30, 90);
 
         public static void StellarsOfTongueGuildPlayerStatUpdate()
-
         {
             Program.currentPlayer.playerStrength += StellarsOfTongue.GuildStrengthBoost;
             Program.currentPlayer.playerKnowledge += StellarsOfTongue.GuildKnowledgeBoost;
@@ -15,7 +14,6 @@ namespace Another_World_Adventure
         }
 
         public static void StellarsOfTongueClassMenu()
-
         {
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("|      ");
@@ -42,8 +40,6 @@ namespace Another_World_Adventure
                     Console.ReadKey();
                     Console.Clear();
                     Program.SlowTextAnimation("Your stats have been updated with your guilds skillsets!");
-                    Console.WriteLine();
-                    Program.SlowTextAnimation("Please go back and exit to continue story.");
                     Console.ReadKey();
                     Console.Clear();
                     break;
@@ -51,11 +47,12 @@ namespace Another_World_Adventure
                 else if (stellarsOfTongueClassMenuInput == "g" || stellarsOfTongueClassMenuInput == "go back")
                 {
                     Console.Clear();
-                    BaseCharacterGuildClass.AllGuildsDisplayMenu();
+                    break;
                 }
                 else if (stellarsOfTongueClassMenuInput == "" || stellarsOfTongueClassMenuInput == "")
                 {
                     Program.QsCharacterDialog("\"You are really giving me mixed signals here. Do you want to join the guild or go back?\"");
+                    continue;
                 }
             }
         }

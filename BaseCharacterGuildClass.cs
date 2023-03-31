@@ -75,7 +75,7 @@ namespace Another_World_Adventure
                 }
                 else if (joinGuildResponse == "n" || joinGuildResponse == "N")
                 {
-                    Program.QsCharacterDialog("\"My my, you are incredibly boring.\"\n\n");
+                    Program.QsCharacterDialog("\"My my, you are incredibly boring.\"\n");
                     Program.SlowTextAnimation("You were bonked on the head, and sent back to the dark abyss.");
                     Console.ReadKey();
                     Console.Clear();
@@ -113,8 +113,6 @@ namespace Another_World_Adventure
                 Console.WriteLine("|   (O)wls of the Devoted         |");
                 Console.WriteLine("|                                 |");
                 Console.WriteLine("|   (S)tellars of Tongue          |");
-                Console.WriteLine("|                                 |");
-                Console.WriteLine("|   (E)xit                        |");
                 Console.WriteLine("-----------------------------------");
 
                 string selectGuildClass = Console.ReadLine().ToLower();
@@ -122,18 +120,33 @@ namespace Another_World_Adventure
                 if (selectGuildClass == "f" || selectGuildClass == "fist of wrath")
                 {
                     FistOfWrathClass.FistOfWrathClassMenu();
+                    if (Program.currentPlayer.playerGuildName == FistOfWrathClass.FistOfWrath.GuildName)
+                        break;
+                    else
+                        continue;
                 }
                 else if (selectGuildClass == "o" || selectGuildClass == "owls of the devoted")
                 {
                     OwlsOfTheDevotedClass.OwlsOfTheDevotedClassMenu();
+                    if (Program.currentPlayer.playerGuildName == OwlsOfTheDevotedClass.OwlsOfTheDevoted.GuildName)
+                        break;
+                    else
+                        continue;
                 }
                 else if (selectGuildClass == "s" || selectGuildClass == "stellars of tongue")
                 {
                     StellarsOfTongueClass.StellarsOfTongueClassMenu();
+                    if (Program.currentPlayer.playerGuildName == StellarsOfTongueClass.StellarsOfTongue.GuildName)
+                        break;
+                    else
+                        continue;           
                 }
-                else if (selectGuildClass == "e" || selectGuildClass == "exit")
+                else
                 {
-                    break;
+                    Program.SlowTextAnimation("Please type f for Fist of Wrath, o for Owls of the Devoted, and s for Stellars of Tongue.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    continue;
                 }
 
             }

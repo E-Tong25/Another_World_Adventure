@@ -36,6 +36,7 @@ namespace Another_World_Adventure
                 BaseWeapon.ObtainingOriginalWeapon();
                 BaseCharacterGuildClass.GuildSelection();
                 Encounters.DragonEncounter();
+                GameEndingCredits();
 
             }
 
@@ -123,7 +124,6 @@ namespace Another_World_Adventure
             Console.WriteLine();
             QsCharacterDialog("\"Ah, what could be more peaceful than a village full of wide-eyed, naive, village idiots?\"");
             Console.WriteLine();
-            Console.ReadKey();
             return createdPlayer;
 
         }
@@ -291,7 +291,7 @@ namespace Another_World_Adventure
 
         public static void GameEndingCredits()
         {
-            SlowTextAnimation("Congradulations on finishing the main events for Another World Adventure!",70);
+            SlowTextAnimation("Congratulations on finishing the main events for Another World Adventure!",70);
             SlowTextAnimation("You can continue playing the game by visiting the tavern, shop, or arena, if you want!",70);
             Console.WriteLine();
             SlowTextAnimation("Thanks for playing!",90);

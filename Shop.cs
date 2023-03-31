@@ -32,22 +32,22 @@ namespace Another_World_Adventure
                 Console.WriteLine();
                 Console.WriteLine(player.playerName + "'s Stats");
                 Console.WriteLine("=======================");
-                Console.WriteLine("| Current Health:              " + player.playerHealth);
+                Console.WriteLine("| Current Health:       " + player.playerHealth);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Current Hunger:	          " + player.playerHunger);
-                Console.WriteLine("| Current Drunkness:        " + player.playerDrunkness);
+                Console.WriteLine("| Current Hunger:       " + player.playerHunger);
+                Console.WriteLine("| Current Drunkness:    " + player.playerDrunkness);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Guild Affiliation:        " + player.playerGuildName);
-                Console.WriteLine("| Strength Skill:            " + player.playerStrength);
-                Console.WriteLine("| Knowledge Skill:          " + player.playerKnowledge);
-                Console.WriteLine("| Charm Skill:		           " + player.playerCharm);
+                Console.WriteLine("| Guild Affiliation:    " + player.playerGuildName);
+                Console.WriteLine("| Strength Skill:       " + player.playerStrength);
+                Console.WriteLine("| Knowledge Skill:      " + player.playerKnowledge);
+                Console.WriteLine("| Charm Skill:          " + player.playerCharm);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Weapon Name:		      " + player.playerWeaponName);
-                Console.WriteLine("| Weapon Type:		      " + player.playerWeaponType);
-                Console.WriteLine("| Weapon Strength:     " + player.playerWeaponStrength);
+                Console.WriteLine("| Weapon Name:          " + player.playerWeaponName);
+                Console.WriteLine("| Weapon Type:          " + player.playerWeaponType);
+                Console.WriteLine("| Weapon Strength:      " + player.playerWeaponStrength);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Potions:			          " + player.playerHealthPotion);
-                Console.WriteLine("| Coins:			              $" + player.playerCoins);
+                Console.WriteLine("| Potions:              " + player.playerHealthPotion);
+                Console.WriteLine("| Coins:                $" + player.playerCoins);
                 Console.WriteLine("=======================");
                 Console.WriteLine();
                 Console.WriteLine();
@@ -63,10 +63,12 @@ namespace Another_World_Adventure
                 string shopInput = Console.ReadLine().ToLower();
                 if (shopInput == "p" || shopInput == "potions")
                 {
+                    Console.Clear();
                     PotionsShopWeaponMenu(player);
                 }
                 else if (shopInput == "t" || shopInput == "trade")
                 {
+                    Console.Clear();
                     WeaponsShopWeaponMenu(player);
                 }
                 else if (shopInput == "q" || shopInput == "quit" || shopInput == "save")
@@ -124,8 +126,8 @@ namespace Another_World_Adventure
                 Console.WriteLine("----------------------------------------------------------------");
                 Console.WriteLine("|  Potions:                        ");
                 Console.WriteLine("|                                  ");
-                Console.WriteLine("|    " + Potions.Ambrosia.ItemName + "                    $" + Potions.Ambrosia.ItemPrice);
-                Console.WriteLine("|          Description: " + Potions.Ambrosia.ItemDescription);
+                Console.WriteLine("|    " + Potions.Ambrosia.ItemName + "   $" + Potions.Ambrosia.ItemPrice);
+                Console.WriteLine("|    Description: " + Potions.Ambrosia.ItemDescription);
                 Console.WriteLine("|                                  ");
                 Console.WriteLine("|  (B)uy Potion                    ");
                 Console.WriteLine("|                                  ");
@@ -135,22 +137,22 @@ namespace Another_World_Adventure
                 Console.WriteLine();
                 Console.WriteLine(player.playerName + "'s Stats");
                 Console.WriteLine("=======================");
-                Console.WriteLine("| Current Health:              " + player.playerHealth);
+                Console.WriteLine("| Current Health:      " + player.playerHealth);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Current Hunger:	          " + player.playerHunger);
-                Console.WriteLine("| Current Drunkness:        " + player.playerDrunkness);
+                Console.WriteLine("| Current Hunger:      " + player.playerHunger);
+                Console.WriteLine("| Current Drunkness:   " + player.playerDrunkness);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Guild Affiliation:        " + player.playerGuildName);
-                Console.WriteLine("| Strength Skill:            " + player.playerStrength);
-                Console.WriteLine("| Knowledge Skill:          " + player.playerKnowledge);
-                Console.WriteLine("| Charm Skill:		           " + player.playerCharm);
+                Console.WriteLine("| Guild Affiliation:   " + player.playerGuildName);
+                Console.WriteLine("| Strength Skill:      " + player.playerStrength);
+                Console.WriteLine("| Knowledge Skill:     " + player.playerKnowledge);
+                Console.WriteLine("| Charm Skill:         " + player.playerCharm);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Weapon Name:		      " + player.playerWeaponName);
-                Console.WriteLine("| Weapon Type:		      " + player.playerWeaponType);
+                Console.WriteLine("| Weapon Name:         " + player.playerWeaponName);
+                Console.WriteLine("| Weapon Type:         " + player.playerWeaponType);
                 Console.WriteLine("| Weapon Strength:     " + player.playerWeaponStrength);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Potions:			          " + player.playerHealthPotion);
-                Console.WriteLine("| Coins:			              $" + player.playerCoins);
+                Console.WriteLine("| Potions:             " + player.playerHealthPotion);
+                Console.WriteLine("| Coins:               $" + player.playerCoins);
                 Console.WriteLine("=======================");
                 Console.WriteLine();
                 Console.WriteLine();
@@ -169,14 +171,14 @@ namespace Another_World_Adventure
                     {
                         TryBuy("potion", Potions.Ambrosia.ItemPrice, player);
 
-                        Program.SlowTextAnimation("You pull the " + Potions.Ambrosia.ItemName + " out of the bag and into your small pouch.");
+                        Program.SlowTextAnimation("You hand the shop keep " +Potions.Ambrosia.ItemPrice+ " and put the " + Potions.Ambrosia.ItemName + " into your small pouch.");
                         BaseWeapon.AmbrosiaPotionPlayerStatUpdate();
                         break;
                     }
                     else if (potionShopInventoryInput == "g" || potionShopInventoryInput == "G" || potionShopInventoryInput == "go back" || potionShopInventoryInput == "Go Back")
                     { 
                         Console.Clear();
-                        LoadShop(Program.currentPlayer);
+                        break;
                     }
                     else if (potionShopInventoryInput == "q" || potionShopInventoryInput == "Q" || potionShopInventoryInput == "Quit" || potionShopInventoryInput == "quit")
                     {
@@ -210,33 +212,34 @@ namespace Another_World_Adventure
                 Console.WriteLine("|  (A) " + Weapons.HephaestusSword.ItemName + "             $" + weaponTradePrice);
                 Console.WriteLine("|  " + Weapons.HephaestusSword.WeaponType + " Description: " + Weapons.HephaestusSword.ItemDescription);
                 Console.WriteLine("|                                  ");
-                Console.WriteLine("|  (B) " + Weapons.ApollosBow.ItemName + "                  $" + weaponTradePrice);
+                Console.WriteLine("|  (B) " + Weapons.ApollosBow.ItemName + "                    $" + weaponTradePrice);
                 Console.WriteLine("|  " + Weapons.ApollosBow.WeaponType + " Description: " + Weapons.ApollosBow.ItemDescription);
                 Console.WriteLine("|                                  ");
-                Console.WriteLine("|  (C) " + Weapons.SpearOfAthena.ItemName+ "                $" + weaponTradePrice);
+                Console.WriteLine("|  (C) " + Weapons.SpearOfAthena.ItemName+ "             $" + weaponTradePrice);
                 Console.WriteLine("|  " + Weapons.SpearOfAthena.WeaponType + " Description: " + Weapons.SpearOfAthena.ItemDescription);
                 Console.WriteLine("|                                            ");
+                Console.WriteLine("|  (G)o Back                                 ");
                 Console.WriteLine("----------------------------------------------------------------");
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine(player.playerName + "'s Stats");
                 Console.WriteLine("=======================");
-                Console.WriteLine("| Current Health:              " + player.playerHealth);
+                Console.WriteLine("| Current Health:      " + player.playerHealth);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Current Hunger:	          " + player.playerHunger);
-                Console.WriteLine("| Current Drunkness:        " + player.playerDrunkness);
+                Console.WriteLine("| Current Hunger:      " + player.playerHunger);
+                Console.WriteLine("| Current Drunkness:   " + player.playerDrunkness);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Guild Affiliation:        " + player.playerGuildName);
-                Console.WriteLine("| Strength Skill:            " + player.playerStrength);
-                Console.WriteLine("| Knowledge Skill:          " + player.playerKnowledge);
-                Console.WriteLine("| Charm Skill:		           " + player.playerCharm);
+                Console.WriteLine("| Guild Affiliation:   " + player.playerGuildName);
+                Console.WriteLine("| Strength Skill:      " + player.playerStrength);
+                Console.WriteLine("| Knowledge Skill:     " + player.playerKnowledge);
+                Console.WriteLine("| Charm Skill:         " + player.playerCharm);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Weapon Name:		      " + player.playerWeaponName);
-                Console.WriteLine("| Weapon Type:		      " + player.playerWeaponType);
+                Console.WriteLine("| Weapon Name:         " + player.playerWeaponName);
+                Console.WriteLine("| Weapon Type:         " + player.playerWeaponType);
                 Console.WriteLine("| Weapon Strength:     " + player.playerWeaponStrength);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Potions:			          " + player.playerHealthPotion);
-                Console.WriteLine("| Coins:			              $" + player.playerCoins);
+                Console.WriteLine("| Potions:             " + player.playerHealthPotion);
+                Console.WriteLine("| Coins:               $" + player.playerCoins);
                 Console.WriteLine("=======================");
                 Console.WriteLine();
                 Console.WriteLine();
@@ -280,7 +283,7 @@ namespace Another_World_Adventure
                     else if (weaponShopInventoryInput == "g" || weaponShopInventoryInput == "G" || weaponShopInventoryInput == "go back" || weaponShopInventoryInput == "Go Back")
                     {
                         Console.Clear();
-                        LoadShop(Program.currentPlayer);
+                        break;
                     }
                     else if (weaponShopInventoryInput == "q" || weaponShopInventoryInput == "Q" || weaponShopInventoryInput == "Quit" || weaponShopInventoryInput == "quit")
                     {

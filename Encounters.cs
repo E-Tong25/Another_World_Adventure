@@ -12,7 +12,7 @@ namespace Another_World_Adventure
         {
             Program.SlowTextAnimation("You walk outside your little abode, becoming struck with all the excitment around the village square.\nVillagers, bustling about their day, seem full of energy and delight.");
             Console.WriteLine();
-            Program.SlowTextAnimation("A guard, who is way too drunk for this time of day, stumbles over to you.\n\n");
+            Program.SlowTextAnimation("A guard, who is way too drunk for this time of day, stumbles over to you.\n");
             Program.GenericEnemyCharacterDialog("\"What are you looking at?\"");
             Console.ReadKey();
             // Name of enemy, power level, and health
@@ -25,7 +25,7 @@ namespace Another_World_Adventure
             Console.Clear();
             Program.SlowTextAnimation("As you got closer, you come to the large, ancient tree where a giant serpent-like dragon is wrapped around it.\n");
             Program.LadonsCharacterDialog("\"A human? Ladon the Dragon, the protector of the Golden Apple Tree, has not seen a human here for quite some time. What do you want child?\"\n");
-            Program.QsCharacterDialog("\"So what now? I would suggest choosing carefully.\"\n\n\"Although, I hope you choose the wrong one like an idiot, it would be more entertaining for me.\n\n\"");
+            Program.QsCharacterDialog("\"So what now? I would suggest choosing carefully.\"\n\n\"Although, I hope you choose the wrong one like an idiot, it would be more entertaining for me.\"\n\n");
             FightingChoiceDragonEncounter(Program.currentPlayer);
             CompletingDragonQuest();
         }
@@ -109,7 +109,7 @@ namespace Another_World_Adventure
                     int enemyAttack = (enemyPower / 4);
                     if (enemyAttack < 0)
                         enemyAttack = 0;
-                    int playerAttack = rand.Next(0, Program.currentPlayer.playerStrength) / 2;
+                    int playerAttack = rand.Next(0, Program.currentPlayer.playerStrength) / 5;
                     Program.QsCharacterDialog("\"Pretty good defense, but not good enough. You lost " + enemyAttack + " health.\"\n\"I'm not too sure how, but you manage to deal " + playerAttack + " damage on defense.\"");
                     Program.currentPlayer.playerHealth -= enemyAttack;
                     enemyHealth -= playerAttack;
@@ -120,7 +120,7 @@ namespace Another_World_Adventure
 
                     if (rand.Next(0, 2) == 0)
                     {
-                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + " , it manages to cut you, sending a sharp pain in your back.");
+                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + ", it manages to cut you, sending a sharp pain in your back.");
                         int enemyAttack = enemyPower + rand.Next(1, 6);
                         if (enemyAttack < 0)
                             enemyAttack = 0;
@@ -253,7 +253,7 @@ namespace Another_World_Adventure
 
                     if (rand.Next(0, 2) == 0)
                     {
-                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + " , you trip and twist your ankle, sending a sharp pain in your leg.");
+                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + ", you trip and twist your ankle, sending a sharp pain in your leg.");
                         int enemyAttack = enemyPower + rand.Next(1, 6);
                         if (enemyAttack < 0)
                             enemyAttack = 0;
@@ -366,7 +366,7 @@ namespace Another_World_Adventure
 
                     if (rand.Next(0, 2) == 0)
                     {
-                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + " , it manages to cut you, sending a sharp pain in your back.");
+                        Program.SlowTextAnimation("As you sprint away from the " + enemyName + " ,it manages to cut you, sending a sharp pain in your back.");
                         int enemyAttack = enemyPower + rand.Next(1, 6);
                         if (enemyAttack < 0)
                             enemyAttack = 0;
@@ -482,12 +482,13 @@ namespace Another_World_Adventure
         {
             Program.SlowTextAnimation("As you exit from the guild, you notice a job posting on the wall.\n");
             Console.WriteLine("Wanted: Adventurer");
-            Console.WriteLine("--------------------");
+            Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("Task:");
             Console.WriteLine("Out in the forest within a vast garden, there resides a single Golden Apple Tree. Find and retreieve an apple from this tree for a reward.\n");
             Console.WriteLine("Reward: 200 gold coins\n");
             Console.WriteLine("FYI: ");
-            Console.WriteLine("There is totally no danger in this job. Yep, none wahtsoever.\n");
+            Console.WriteLine("There is totally no danger in this job. Yep, none wahtsoever.");
+            Console.WriteLine("---------------------------------------------------\n");
             Program.QsCharacterDialog("\"Sounds promising, I think you should do it.\"\n\"It can raise your cool score, which you desperately need.\"");
             Console.ReadKey();
             Console.Clear();
@@ -507,17 +508,18 @@ namespace Another_World_Adventure
                 {
                     Console.Clear();
                     Program.SlowTextAnimation("Using the smoke as your guiding light, you venture closer to the source.");
-                    Program.SlowTextAnimation("Peaking out of the trees, you see an small opening of grass, currently home to a small campsite. A makeshift tent is weighed down and offered structured by various baggage and boxes, and a cooking pot assembled over the burning fire illuminates a figure.");
+                    Program.SlowTextAnimation("Peaking out of the trees, you see an small opening of grass, currently home to a makeshift campsite.\nA tattered tent is weighed down and held together by various baggage and boxes, and a cooking pot assembled over the burning fire illuminates a figure.");
                     Program.SlowTextAnimation("The cloaked figure pokes at the fire with a long branch, feeding the flames to engulf the bottom of the pot more.");
                     Program.SlowTextAnimation("While the figure hasn't noticed you yet, you overhear the figure softly hum and sing a ballad to themselves.\n");
-                    Program.CynosCharacterDialog("\"Hó-son   zēis  phaí-nou\"n\"mē-dén hó-lōs   su   lu-poû\"\n\"pros o - lí - gon és -ti    to zên\"\"to té -los ho  chró-nos a - pai-teî\"\n");
+                    Program.CynosCharacterDialog("\"Hó-son   zēis  phaí-nou\"\n\"mē-dén hó-lōs   su   lu-poû\"\n\"pros o - lí - gon és -ti  to zên\"\n\"to té -los ho  chró-nos a - pai-teî\"\n");
                     Program.SlowTextAnimation("That voice, it sounds familiar.\n");
-                    Program.CynosCharacterDialog("\"While you live, shine bright:\"\n\"Don't let sorrow you benight;\"\n\"We don't have life for long, my friend:\"\"To everything Time demands an end.\"");
+                    Program.CynosCharacterDialog("\"While you live, shine bright:\"\n\"Don't let sorrow you benight;\"\n\"We don't have life for long, my friend:\"\n\"To everything Time demands an end.\"\n");
                     Program.SlowTextAnimation("Moving closer, you step onto a branch, breaking it.");
-                    Program.SlowTextAnimation("The figure freezes and lifts their head into the air.");
+                    Program.SlowTextAnimation("The figure freezes and lifts their head into the air.\n");
                     Program.CynosCharacterDialog("\"While I may be old, my nose still remains accurate. That scent, we have met before.\"\n");
                     Program.SlowTextAnimation("Turning he flashes the warmest smile.\n");
                     Program.CynosCharacterDialog("\"Hello, my friend.\"\n");
+                    Console.ReadKey();
                     Program.SlowTextAnimation("After a long night of catching up and telling Cyno about your quest, he offered to help you since he has been to the secret garden before.");
                     Program.SlowTextAnimation("You both get some sleep, awaiting the day ahead.");
                     Console.ReadKey();
@@ -560,27 +562,31 @@ namespace Another_World_Adventure
                 }
             }
             Program.SlowTextAnimation("Following Cyno through the forest, you both come to a mystic fog, as if it were the edge of the world.\n");
-            Program.CynosCharacterDialog("\"No need to fear, the fog acts as a boundary to keep demons or ill-of-heart away.\"\n\"As you continue forward, you will find the garden. The nymphs shouldn't bother you at this time of the day, so you should find the Golden Apple Tree in the middle of the garden without interference.\"\n");
+            Program.CynosCharacterDialog("\"No need to fear, the fog acts as a gate to keep demons or ill-of-heart away.\"\n\"Ahead, you will find the garden. The nymphs shouldn't bother you at this time of the day, so you should have no problems.\"\n");
             Program.SlowTextAnimation("Cyno starts to head back the way you came and waves goodbye once more.\n");
             Program.CynosCharacterDialog("\"I'm positive we will meet again soon. Good luck!\"\n");
             Program.SlowTextAnimation("You walk through the mist, and are greeted by a warm and sweet smell. Flowers bloom all around, it seems like an endless field of flowers, plants, and grasses in all directions.");
             Program.SlowTextAnimation("A marble path leads further into the field, where you can see a bright, golden glare.");
+            Console.ReadKey();
         }
 
         public static void CompletingDragonQuest()
         {
             Program.SlowTextAnimation("Ladon has been subdued and you are able to approach the Gold Apple Tree.");
-            Program.SlowTextAnimation("You reach for one on a lower branch and you manage to pluck it off. The apple is a rather large, the gold exterior makes it a beauty to behold.\n");
-            Program.QsCharacterDialog("\"Congrats on accomplishing the quest! How exciting. I guess the only thing now is to return it to the one who requested the task\"\n");
+            Program.SlowTextAnimation("You reach for one on a lower branch, and you manage to pluck it off. The apple is rather large, the gold exterior makes it a beauty to behold.\n");
+            Program.QsCharacterDialog("\"Congrats on accomplishing the quest! How exciting. I guess the only thing now is to return it to the one who requested the task.\"\n");
+            Console.ReadKey();
             Program.SlowTextAnimation("Suddenly the apple vanishes in thin air.\n");
-            Program.QsCharacterDialog("\"Surprise, surprise, I was the one who requested the apple and posted the quest. While I know it was very mischievous of me, look at how far you've come, " + Program.currentPlayer.playerName + "!\"\n\"Ah! So proud.\"");
-            Program.QsCharacterDialog("\"The legends behind these apples are that they hold a great power of immortality. Something only belonging to the Gods.\"\n\"Me, I just like the taste. Yum! Nothing better than an golden apple that was fought for by a brave adventurer, yes! I can't get enough.\"\n\"As promised, here is your reward.\"");
+            Program.QsCharacterDialog("\"Surprise, surprise!\"\n\"I was the one who requested the apple and posted the quest. While I know it was very mischievous of me, look at how far you've come, " + Program.currentPlayer.playerName + "!\"\n\"Ah! So proud.\"\n");
+            Program.QsCharacterDialog("\"The legends behind these apples are that they hold a great power of immortality. Something only belonging to the Gods.\"\n\"Me, I just like the taste. Yum! Nothing better than an golden apple that was fought for by a brave adventurer, yes! I can't get enough.\"\n\n\"As promised, here is your reward.\"\n");
             int coinsReward = 200;
             Program.SlowTextAnimation(coinsReward + " gold coins fall on your head.");
             Program.currentPlayer.playerCoins += coinsReward;
             Console.ReadKey();
             Console.Clear();
-            Program.SlowTextAnimation("")
+            Program.SlowTextAnimation("You walk back to the village, after a long journey. You are amazed at this new, another world life.");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public static void FightingChoiceDragonEncounter(Player player)
@@ -591,8 +597,8 @@ namespace Another_World_Adventure
             {
                 Console.WriteLine("=====================");
                 Console.WriteLine("| (A)ttack          |");
-                Console.WriteLine("| (O)utwit	       |");
-                Console.WriteLine("| (S)educe	       |");
+                Console.WriteLine("| (O)utwit          |");
+                Console.WriteLine("| (S)educe          |");
                 Console.WriteLine("=====================");
 
                 string dragonEncounterInput = Console.ReadLine();
@@ -647,7 +653,7 @@ namespace Another_World_Adventure
                 }
                 else if (guildSkill == "charm")
                 {
-                    Program.SlowTextAnimation("Doing your best seduction walk, you make you way over to Ladon. You offer compliments on his mightyness and high-intellect.");
+                    Program.SlowTextAnimation("Doing your best seduction walk, you make you way over to Ladon. You offer compliments on his mightiness and high-intellect.");
                     Program.SlowTextAnimation("Overly flattered, Ladon begins to blush and lets his guard down enough for you to have an opportunity to grab an apple.\n");
                     Program.QsCharacterDialog("\"Wow... um, I'm speechless, honestly. Just *coughs* wow...\"");
                     Console.ReadKey();
@@ -659,7 +665,7 @@ namespace Another_World_Adventure
                 Console.Clear();
                 Program.QsCharacterDialog("\"It looks like you didn't choose the best choice for you and your skill set. Good luck on fullout fighting!\"\n");
                 Program.SlowTextAnimation("Ladon, enraged at your attempt to best him, prepares to attack.\n");
-                DragonCombat(false, "Dragon", 100, 1000);
+                DragonCombat(false, "Dragon", 2, 1000);
             }
         }
     }

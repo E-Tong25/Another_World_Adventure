@@ -20,6 +20,7 @@ namespace Another_World_Adventure
         {
             ItemName = wineName;
             ItemDescription = wineDescription;
+            ItemPrice = winePrice;
             ItemDrunkBoost = wineDrunkBoost;
             WineType = typeOfWine;
             ItemID = wineID;

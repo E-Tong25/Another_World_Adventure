@@ -3,7 +3,7 @@ namespace Another_World_Adventure
 {
     public class OwlsOfTheDevotedClass
     {
-        public static BaseCharacterGuildClass OwlsOfTheDevoted = new BaseCharacterGuildClass("Owls Of The Devoted", "\"To know or not to know, that is the question. As a member of The Owls Of The Devoted Guild, debates among the brightest and the sounds of pages in books turning surround you.\"\n|    \"You feel yourself understanding more about this world and the wisdom that comes with it, however I wouldn't be betting on you in a hand-to-hand fight.\"", 30, 90, 50);
+        public static BaseCharacterGuildClass OwlsOfTheDevoted = new BaseCharacterGuildClass("Owls Of The Devoted", "\"To know or not to know, that is the question. As a member of The Owls Of The Devoted Guild, debates among the brightest and the sounds of turning pages in books turning surround you.\"\n|    \"You feel yourself understanding more about this world and the wisdom that comes with it, however I wouldn't be betting on you in a hand-to-hand fight.\"", 30, 90, 50);
 
         public static void OwlsOfTheDevotedPlayerStatUpdate()
         {
@@ -11,7 +11,6 @@ namespace Another_World_Adventure
             Program.currentPlayer.playerKnowledge += OwlsOfTheDevoted.GuildKnowledgeBoost;
             Program.currentPlayer.playerCharm += OwlsOfTheDevoted.GuildCharmBoost;
             Program.currentPlayer.playerGuildName += OwlsOfTheDevoted.GuildName;
-
         }
 
         public static void OwlsOfTheDevotedClassMenu()
@@ -41,8 +40,6 @@ namespace Another_World_Adventure
                     Console.ReadKey();
                     Console.Clear();
                     Program.SlowTextAnimation("Your stats have been updated with your guilds skillsets!");
-                    Console.WriteLine();
-                    Program.SlowTextAnimation("Please go back and exit to continue story.");
                     Console.ReadKey();
                     Console.Clear();
                     break;
@@ -50,11 +47,12 @@ namespace Another_World_Adventure
                 else if (owlsOfTheDevotedClassMenuInput == "g" || owlsOfTheDevotedClassMenuInput == "go back")
                 {
                     Console.Clear();
-                    BaseCharacterGuildClass.AllGuildsDisplayMenu();
+                    break;
                 }
                 else if (owlsOfTheDevotedClassMenuInput == "" || owlsOfTheDevotedClassMenuInput == "")
                 {
                     Program.QsCharacterDialog("\"You are really giving me mixed signals here. Do you want to join the guild or go back?\"");
+                    continue;
                 }
             }
         }

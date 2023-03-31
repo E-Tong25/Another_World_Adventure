@@ -11,7 +11,6 @@ namespace Another_World_Adventure
             Program.currentPlayer.playerKnowledge += FistOfWrath.GuildKnowledgeBoost;
             Program.currentPlayer.playerCharm += FistOfWrath.GuildCharmBoost;
             Program.currentPlayer.playerGuildName += FistOfWrath.GuildName;
-
         }
 
         public static void FistOfWrathClassMenu()
@@ -41,8 +40,6 @@ namespace Another_World_Adventure
                     Console.ReadKey();
                     Console.Clear();
                     Program.SlowTextAnimation("Your stats have been updated with your guilds skillsets!");
-                    Console.WriteLine();
-                    Program.SlowTextAnimation("Please go back and exit to continue story.");
                     Console.ReadKey();                    
                     Console.Clear();
                     break;
@@ -50,11 +47,12 @@ namespace Another_World_Adventure
                 else if (fistOfWrathClassMenuInput == "g" || fistOfWrathClassMenuInput == "go back")
                 {
                     Console.Clear();
-                    BaseCharacterGuildClass.AllGuildsDisplayMenu();
+                    break;
                 }
                 else if (fistOfWrathClassMenuInput == "" || fistOfWrathClassMenuInput == "")
                 {
                     Program.QsCharacterDialog("\"You are really giving me mixed signals here. Do you want to join the guild or go back?\"");
+                    continue;
                 }
 
             }

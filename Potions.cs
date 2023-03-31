@@ -1,22 +1,15 @@
 ﻿using System;
-using static Another_World_Adventure.BaseWeapon;
 
 namespace Another_World_Adventure
 {
-	public class Potion : BasePotion
+	public class Potions
     {
-        public List<Potion> potions = new List<Potion>();
-
-        public Potion()
-        {
-            potions.Add(new Potion { ItemName = "Ambrosia", ItemDescription = "Drink of the Gods. For your healing needs.", ItemPrice = 30, ItemID = 4, ItemHealthBoost = 20, PotionType = PotionTypes.Health });
-            potions.Add(new Potion { ItemName = "Potion of Strength", ItemDescription = "Blood and sweat fill this vial. Boost your strength.", ItemPrice = 15, ItemID = 5, ItemStrengthBoost = 2, PotionType = PotionTypes.Strength });
-            potions.Add(new Potion { ItemName = "Potion of Wisdom", ItemDescription = "Memories swirl in this viral. Boost your knowledge.", ItemPrice =15, ItemID = 6, ItemKnowledgeBoost = 2, PotionType = PotionTypes.Knowledge });
-            potions.Add(new Potion { ItemName = "Aphrodite's Bath Water", ItemDescription = "The most lovely smell seeps through this vial. Boost your charm.", ItemPrice =15, ItemID = 7, ItemCharmBoost = 2, PotionType = PotionTypes.Charm });
-
-        }
-
+        public static BasePotion Ambrosia = new BasePotion("Ambrosia", "Drink of the Gods. For your healing needs.", 30, 20, 0, 0, 0, BasePotion.PotionTypes.Health, 4);
+        public static BasePotion PotionOfStrength = new BasePotion("Potion of Strength", "Blood and sweat fill this vial. Boost your strength.", 15, 0, 2, 0, 0, BasePotion.PotionTypes.Strength, 5);
+        public static BasePotion PotionOfWisdom = new BasePotion("Potion of Wisdom", "Memories swirl in this viral. Boost your knowledge.", 15, 0, 0, 2, 0, BasePotion.PotionTypes.Knowledge, 6 );
+        public static BasePotion AphroditesBathWater = new BasePotion("Aphrodite's Bath Water", "The most lovely smell seeps through this vial. Boost your charm.", 15, 0, 0, 0, 2, BasePotion.PotionTypes.Charm, 7);
     }
+
 }
 
 

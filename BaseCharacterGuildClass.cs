@@ -1,48 +1,65 @@
 ﻿using System;
+using static Another_World_Adventure.BaseWine;
+
 namespace Another_World_Adventure
 {
 	public class BaseCharacterGuildClass
 	{
-		private string? guildName;
-		private string? guildDescription;
+        public string GuildName { get; private set; }
+        public string GuildDescription { get; private set; }
+        public int GuildStrengthBoost { get; private set; }
+        public int GuildKnowledgeBoost { get; private set; }
+        public int GuildCharmBoost { get; private set; }
 
-		//Stats
-
-		private int guildStrengthBoost;
-		private int guildKnowledgeBoost;
-		private int guildCharmBoost;
-
-		public string GuildName
-		{
-			get { return guildName; }
-			set { guildName = value; }
-		}
-		public string GuildDescription
-		{
-			get { return guildDescription; }
-			set { guildDescription = value; }
-		}
-		public int GuildStrengthBoost
-		{
-			get { return guildStrengthBoost; }
-			set { guildStrengthBoost = value; }
-		}
-        public int GuildKnowledgeBoost
+        public BaseCharacterGuildClass(string guildName, string guildDescription, int guildStrengthBoost, int guildKnowledgeBoost, int guildCharmBoost)
         {
-            get { return guildKnowledgeBoost; }
-            set { guildKnowledgeBoost = value; }
+            GuildName = guildName;
+            GuildDescription = guildDescription;
+            GuildStrengthBoost = guildStrengthBoost;
+            GuildKnowledgeBoost = guildKnowledgeBoost;
+            GuildCharmBoost = guildCharmBoost;
         }
-        public int GuildCharmBoost
-        {
-            get { return guildCharmBoost; }
-            set { guildCharmBoost = value; }
-        }
-       
 
+
+
+  //      private string guildName;
+  //      private string guildDescription;
+
+		////Stats
+
+		//private int guildStrengthBoost;
+		//private int guildKnowledgeBoost;
+		//private int guildCharmBoost;
+
+		//public string GuildName
+		//{
+		//	get { return guildName; }
+		//	set { guildName = value; }
+		//}
+		//public string GuildDescription
+		//{
+  //          get { return guildDescription; }
+		//	set { guildDescription = value; }
+		//}
+		//public int GuildStrengthBoost
+		//{
+		//	get { return guildStrengthBoost; }
+		//	set { guildStrengthBoost = value; }
+		//}
+  //      public int GuildKnowledgeBoost
+  //      {
+  //          get { return guildKnowledgeBoost; }
+  //          set { guildKnowledgeBoost = value; }
+  //      }
+  //      public int GuildCharmBoost
+  //      {
+  //          get { return guildCharmBoost; }
+  //          set { guildCharmBoost = value; }
+  //      }
 
         //Story Point- Guild Selection
 
-		public static void GuildSelection()
+        public static void GuildSelection()
 		{
    
 			while (true)

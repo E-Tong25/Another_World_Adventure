@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace Another_World_Adventure
 {
-	public class BaseWeapon : BaseStatItem
+
+    public class BaseWeapon : BaseStatItem
 	{
 		public enum WeaponTypes
 		{
@@ -139,18 +140,30 @@ namespace Another_World_Adventure
                     Program.CynosCharacterDialog("\"Perfect! Don't be shy, these are some of my prized possessions, so treat them well.\"");
                     Console.WriteLine();
                     CynosBagDisplay();
+                    Console.Clear();
+                    Program.CynosCharacterDialog("\"That's a good one. I hope it serves you when you most need it.\"");
                     Console.ReadKey();
+                    Console.Clear();
                     break;
                 }
                 else if (lookInBagInput == "n" || lookInBagInput == "N")
                 {
-                    Program.CynosCharacterDialog("\"Ah, no worries. If you change your mind, I'm sure the shop keeper will be able to give you a deal.\"");
+                    Program.CynosCharacterDialog("\"No please, I insist.\"");
                     Console.WriteLine();
-                    Program.CynosCharacterDialog("\"I hope we meet again!\"");
+                    CynosBagDisplay();
+                    Console.Clear();
+                    Program.CynosCharacterDialog("\"That's a good one. I hope it serves you when you most need it.\"");
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    Console.Clear();
                     break;
                 }
             }
 
+            Console.ReadKey();
+            Program.SlowTextAnimation("Cyno reties his bag and continues to the shop. As he walks away, he waves goodbye.");
+            Console.WriteLine();
+            Program.CynosCharacterDialog("\"I hope we meet again!\"");
 
 
         }
@@ -159,17 +172,107 @@ namespace Another_World_Adventure
         {
             Console.WriteLine("         Cynos Bag Display          ");
 
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("|                                ");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("|  Weapons:                        ");
             Console.WriteLine("|                                  ");
-            Console.WriteLine("|  Description: " + Weapons.HephaestusSword.ItemName + "          ");
-            Console.WriteLine("|                                 ");
-            Console.WriteLine("|   (S)tellars of Tongue          ");
-            Console.WriteLine("|                                 ");
-            Console.WriteLine("|   (E)xit                        ");
-            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("|  " + Weapons.HephaestusSword.ItemName);
+            Console.WriteLine("|  " + Weapons.HephaestusSword.WeaponType+" Description: "+ Weapons.HephaestusSword.ItemDescription);
+            Console.WriteLine("|                                  ");
+            Console.WriteLine("|  " + Weapons.ApollosBow.ItemName);
+            Console.WriteLine("|  " + Weapons.ApollosBow.WeaponType+" Description: "+ Weapons.ApollosBow.ItemDescription);
+            Console.WriteLine("|                                  ");
+            Console.WriteLine("|  " + Weapons.SpearOfAthena.ItemName);
+            Console.WriteLine("|  " + Weapons.SpearOfAthena.WeaponType+" Description: "+ Weapons.SpearOfAthena.ItemDescription);
+            Console.WriteLine("|                                  ");
+            Console.WriteLine("|  Potions:                        ");
+            Console.WriteLine("|                                  ");
+            Console.WriteLine("|  " + Potions.Ambrosia.ItemName);
+            Console.WriteLine("|          Description: " + Potions.Ambrosia.ItemDescription);
+            Console.WriteLine("|                                  ");
+            Console.WriteLine("----------------------------------------------------------------");
 
+
+            while (true)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("Which item from Cyno's bag do you want to add to your inventory?");
+                string? obtainingOriginalWeaponInput = Console.ReadLine();
+
+                if (obtainingOriginalWeaponInput == "sword" || obtainingOriginalWeaponInput == "Sword" || obtainingOriginalWeaponInput == "Hephaestus' Sword" || obtainingOriginalWeaponInput == "hephaestus' sword")
+                {
+                    Console.Clear();
+                    Program.SlowTextAnimation("You pull " + Weapons.HephaestusSword.ItemName + " out of the bag and holster it to your waist.");
+                    SwordWeaponPlayerStatUpdate();
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+
+                }
+                else if (obtainingOriginalWeaponInput == "bow" || obtainingOriginalWeaponInput == "Bow" || obtainingOriginalWeaponInput == "Apollo's Bow" || obtainingOriginalWeaponInput == "apollo's bow")
+                {
+                    Console.Clear();
+                    Program.SlowTextAnimation("You pull " + Weapons.ApollosBow.ItemName + " out of the bag and sling it across your back.");
+                    BowWeaponPlayerStatUpdate();
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                }
+                else if (obtainingOriginalWeaponInput == "spear" || obtainingOriginalWeaponInput == "Spear" || obtainingOriginalWeaponInput == "Athena's Spear" || obtainingOriginalWeaponInput == "athena's spear")
+                {
+                    Console.Clear();
+                    Program.SlowTextAnimation("You pull the " + Weapons.SpearOfAthena.ItemName + " out of the bag and sling it to across your back.");
+                    SpearWeaponPlayerStatUpdate();
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                }
+                else if (obtainingOriginalWeaponInput == "potion" || obtainingOriginalWeaponInput == "Potion" || obtainingOriginalWeaponInput == "ambrosia" || obtainingOriginalWeaponInput == "Ambrosia")
+                {
+                    Console.Clear();
+                    Program.SlowTextAnimation("You pull the " + Potions.Ambrosia.ItemName + " out of the bag and into your small pouch.");
+                    AmbrosiaPotionPlayerStatUpdate();
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Program.QsCharacterDialog("Please type sword, bow, spear, or potion.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    continue;
+                }
+            }
         }
+
+        public static void SwordWeaponPlayerStatUpdate()
+        {
+            string swordWeaponType = Weapons.HephaestusSword.WeaponType.ToString();
+
+            Program.currentPlayer.playerWeaponName = Weapons.HephaestusSword.ItemName;
+            Program.currentPlayer.playerWeaponType = swordWeaponType;
+            Program.currentPlayer.playerWeaponStrength = Weapons.HephaestusSword.ItemStrengthBoost;
+        }
+        public static void BowWeaponPlayerStatUpdate()
+        {
+            string bowWeaponType = Weapons.ApollosBow.WeaponType.ToString();
+
+            Program.currentPlayer.playerWeaponName = Weapons.ApollosBow.ItemName;
+            Program.currentPlayer.playerWeaponType = bowWeaponType;
+            Program.currentPlayer.playerWeaponStrength = Weapons.ApollosBow.ItemStrengthBoost;
+        }
+        public static void SpearWeaponPlayerStatUpdate()
+        {
+            string spearWeaponType = Weapons.SpearOfAthena.WeaponType.ToString();
+
+            Program.currentPlayer.playerWeaponName = Weapons.SpearOfAthena.ItemName;
+            Program.currentPlayer.playerWeaponType = spearWeaponType;
+            Program.currentPlayer.playerWeaponStrength = Weapons.SpearOfAthena.ItemStrengthBoost;
+        }
+        public static void AmbrosiaPotionPlayerStatUpdate()
+        {
+            Program.currentPlayer.playerHealthPotion++;
+        }
+
 
     }
 }

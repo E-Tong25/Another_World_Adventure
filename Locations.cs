@@ -23,8 +23,6 @@ namespace Another_World_Adventure
                 Console.WriteLine("        Village        ");
                 Console.WriteLine("=======================");
                 Console.WriteLine("|     			      ");
-                Console.WriteLine("| (M)ain Quest         ");
-                Console.WriteLine("|    			      ");
                 Console.WriteLine("| (T)avern             ");
                 Console.WriteLine("|    			      ");
                 Console.WriteLine("| (S)hop			      ");
@@ -40,11 +38,8 @@ namespace Another_World_Adventure
 
 
                 string locationsInput = Console.ReadLine().ToLower();
-                if (locationsInput == "m" || locationsInput == "main quest" || locationsInput == "main")
-                {
-                    
-                }
-                else if (locationsInput == "t" || locationsInput == "tavern")
+
+                if (locationsInput == "t" || locationsInput == "tavern")
                 {
                     Tavern.LoadTavern(Program.currentPlayer);
                 }
@@ -61,9 +56,8 @@ namespace Another_World_Adventure
                     Program.Quit();
                 }
             }
-            
-
         }
-	}
+
+    }
 }
 

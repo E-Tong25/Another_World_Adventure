@@ -1,27 +1,28 @@
 ﻿using System;
 namespace Another_World_Adventure
 {
-    public class FistOfWrathClass : BaseCharacterGuildClass
+    public static class FistOfWrathClass
     {
-        public static BaseCharacterGuildClass fistOfWrath;
+        public static BaseCharacterGuildClass FistOfWrath = new BaseCharacterGuildClass("Fist of Wrath", "\"There is never too much punching, they say. As a member of the Fist of Wrath Guild, you are surrounded by the strongest in the valley, always hungry for a good fight\".\n|    \"While you feel yourself increasing in strength, I doubt you will be reguarded as the Valley's Next Top Model.\"", 90, 50, 30);
+
+        public static void FistOfWrathGuildPlayerStatUpdate()
+        {
+            Program.currentPlayer.playerStrength += FistOfWrath.GuildStrengthBoost;
+            Program.currentPlayer.playerKnowledge += FistOfWrath.GuildKnowledgeBoost;
+            Program.currentPlayer.playerCharm += FistOfWrath.GuildCharmBoost;
+            Program.currentPlayer.playerGuildName += FistOfWrath.GuildName;
+
+        }
 
         public static void FistOfWrathClassMenu()
-        {
-            BaseCharacterGuildClass fistOfWrath = new BaseCharacterGuildClass();
-
-            fistOfWrath.GuildName = "Fist of Wrath";
-            fistOfWrath.GuildDescription = "\"There is never too much punching, they say. As a member of the Fist of Wrath Guild, you are surrounded by the strongest in the valley, always hungry for a good fight\".\n|    \"While you feel yourself increasing in strength, I doubt you will be reguarded as the Valley's Next Top Model.\"";
-            fistOfWrath.GuildStrengthBoost = 90;
-            fistOfWrath.GuildKnowledgeBoost = 50;
-            fistOfWrath.GuildCharmBoost = 30;
-
+        { 
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("|   ");
-            Console.WriteLine("|   Name of Guild: " + fistOfWrath.GuildName +                "");
+            Console.WriteLine("|   Name of Guild: " + FistOfWrath.GuildName +                "");
             Console.WriteLine("|                                                              ");
             Console.WriteLine("|   Guild Description:      ");
             Console.WriteLine("|                                                              ");
-            Console.WriteLine("|    "+ fistOfWrath.GuildDescription +                        "");
+            Console.WriteLine("|    "+ FistOfWrath.GuildDescription +                        "");
             Console.WriteLine("|                                 ");
             Console.WriteLine("|   (J)oin Guild                  ");
             Console.WriteLine("|                                 ");
@@ -33,16 +34,16 @@ namespace Another_World_Adventure
                 string fistOfWrathClassMenuInput = Console.ReadLine().ToLower();
                 if (fistOfWrathClassMenuInput == "j" || fistOfWrathClassMenuInput == "join guild")
                 {
-                    Program.SlowTextAnimation("Congrats! You now joined " + fistOfWrath.GuildName + ".");
+                    Program.SlowTextAnimation("Congrats! You now joined " + FistOfWrath.GuildName + ".");
                     Console.WriteLine();
                     Program.QsCharacterDialog("\"I would like to think there's not much going on up there. Just creatine and podcasts from Joe Rogan.\"");
-
-                    Program.currentPlayer.PlayerGuild = new FistOfWrathClass();
                     FistOfWrathGuildPlayerStatUpdate();
-                    Console.WriteLine();
-                    
-                    Program.SlowTextAnimation("Please exit to continue story.");
                     Console.ReadKey();
+                    Console.Clear();
+                    Program.SlowTextAnimation("Your stats have been updated with your guilds skillsets!");
+                    Console.WriteLine();
+                    Program.SlowTextAnimation("Please go back and exit to continue story.");
+                    Console.ReadKey();                    
                     Console.Clear();
                     break;
                 }
@@ -57,15 +58,6 @@ namespace Another_World_Adventure
                 }
 
             }
-        }
-
-        public static void FistOfWrathGuildPlayerStatUpdate()
-        {
-            Program.currentPlayer.playerStrength = (Program.currentPlayer.playerStrength + fistOfWrath.GuildStrengthBoost);
-            Program.currentPlayer.playerKnowledge = (Program.currentPlayer.playerKnowledge + fistOfWrath.GuildKnowledgeBoost);
-            Program.currentPlayer.playerCharm = (Program.currentPlayer.playerCharm + fistOfWrath.GuildCharmBoost);
-            Program.currentPlayer.playerGuildName = (Program.currentPlayer.playerGuildName + fistOfWrath.GuildName);
-
         }
     }
 }

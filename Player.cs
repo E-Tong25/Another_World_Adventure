@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Another_World_Adventure
 {
 	[Serializable]
+
 	public class Player
 	{
 		public string? playerName;
@@ -17,42 +18,38 @@ namespace Another_World_Adventure
 		public int playerKnowledge { get; set; }
 		public int playerCharm { get; set; }
 		public int playerDamage = 0;
-		public int playerPotion = 0;
+		public int playerHealthPotion = 0;
 		public int playerWeaponStrength = 0;
-		public string? playerWeaponName { get; set; }
+		public string? playerWeaponName { get ; set; }
 		public string? playerWeaponType { get; set; }
 		public int playerCoins = 0;
 		public int playerDrunkness = 0;
 		public int playerHunger = 100;
 		public string? playerGuildName { get; set; }
 
-		public BaseCharacterGuildClass PlayerGuild { get; set; }
+		//public BaseCharacterGuildClass PlayerGuild { get; set; }
 
-		public int CalculatedPlayerKnowledge
-		{
-			get { return playerKnowledge + PlayerGuild.GuildKnowledgeBoost; }
-		}
+		//public int CalculatedPlayerKnowledge
+		//{
+		//	get { return playerKnowledge + PlayerGuild.GuildKnowledgeBoost; }
+		//}
 
-        public int CalculatedPlayerStrength
-        {
-            get { return playerStrength + PlayerGuild.GuildStrengthBoost; }
-        }
+  //      public int CalculatedPlayerStrength
+  //      {
+  //          get { return playerStrength + PlayerGuild.GuildStrengthBoost; }
+  //      }
 
-        public int CalculatedPlayerCharm
-        {
-            get { return playerCharm + PlayerGuild.GuildCharmBoost; }
-        }
+  //      public int CalculatedPlayerCharm
+  //      {
+  //          get { return playerCharm + PlayerGuild.GuildCharmBoost; }
+  //      }
 
-        public BaseWeapon PlayerWeapon { get; set; }
+  //      public BaseWeapon PlayerWeapon { get; set; }
 
-        public int CalculatedTotalPlayerAttackPower
-		{
-			get { return CalculatedPlayerStrength + PlayerWeapon.ItemStrengthBoost; }
-		}
-
-
-
-
+  //      public int CalculatedTotalPlayerAttackPower
+		//{
+		//	get { return CalculatedPlayerStrength + PlayerWeapon.ItemStrengthBoost; }
+		//}
 
         //May not need below
         public int mods = 0;

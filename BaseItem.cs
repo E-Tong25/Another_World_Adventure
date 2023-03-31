@@ -38,10 +38,6 @@ namespace Another_World_Adventure
 			get { return itemType; }
 			set { itemType = value; }
 		}
-
-		
-
-
     
     }
 }

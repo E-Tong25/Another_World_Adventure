@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 using System.Media;
 
 namespace Another_World_Adventure
@@ -30,14 +31,19 @@ namespace Another_World_Adventure
             }
             currentPlayer = Load(out bool newP);
             if (newP)
+            {
                 Encounters.DrunkardGuardEncounter();
                 BaseWeapon.ObtainingOriginalWeapon();
                 BaseCharacterGuildClass.GuildSelection();
+                Encounters.DragonEncounter();
+
+            }
+
             while (mainLoop)
             {
+                Locations.LoadAllLocationsMenu();
                 Encounters.ArenaEncounter();
             }
-            Locations.LoadAllLocationsMenu();
         }
 
         static Player NewStart(int i)
@@ -61,7 +67,6 @@ namespace Another_World_Adventure
                 if (wakeUpResponse == "y" || wakeUpResponse == "Y" || wakeUpResponse == "Yes" || wakeUpResponse == "yes")
                 {
                     Console.Clear();
-                    SoundEffects.CreatedCharacterSound();
                     QsCharacterDialog("\"Welcome to being reborn in a new world, a new you!\"\n\"In case you're wondering, you died a horrible, horrific death.\"\n\"Anyways...I should introduce myself.\"\n\"I'm Q, your guide to this another world.\"");
                     Console.ReadKey();
                     Console.Clear();
@@ -121,9 +126,6 @@ namespace Another_World_Adventure
             Console.ReadKey();
             return createdPlayer;
 
-            // Guild Selection
-            //May not need
-            //BaseCharacterGuildClass.GuildSelection();
         }
 
         // Saving and Retreiving Player Data
@@ -242,12 +244,11 @@ namespace Another_World_Adventure
 
         }
 
-
         // Character Speaking Color Text w/ Animation - based on specific characters 
 
         public static void QsCharacterDialog(string text)
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             SlowTextAnimation(text);
             Console.ResetColor();
         }
@@ -261,13 +262,17 @@ namespace Another_World_Adventure
 
         public static void CynosCharacterDialog(string text)
         {
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             SlowTextAnimation(text);
             Console.ResetColor();
         }
 
-
-        // Game Title
+        public static void LadonsCharacterDialog(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            SlowTextAnimation(text);
+            Console.ResetColor();
+        }
 
         public static void GameTitle()
         {
@@ -284,6 +289,25 @@ namespace Another_World_Adventure
             Console.WriteLine(title);
         }
 
+        public static void GameEndingCredits()
+        {
+            SlowTextAnimation("Congradulations on finishing the main events for Another World Adventure!",70);
+            SlowTextAnimation("You can continue playing the game by visiting the tavern, shop, or arena, if you want!",70);
+            Console.WriteLine();
+            SlowTextAnimation("Thanks for playing!",90);
+            Console.ReadKey();
+            Console.Clear();
+            SlowTextAnimation("Created and Directed By:      Elizabeth Tong");
+            SlowTextAnimation("Executive Producer:           Elizabeth Tong");
+            SlowTextAnimation("Coder:                        Elizabeth Tong");
+            SlowTextAnimation("Researcher:                   Elizabeth Tong");
+            SlowTextAnimation("Cool Person:                  Elizabeth Tong");
+            Console.WriteLine("\n\n\n\n\n\n\n\n");
+            SlowTextAnimation("Special thanks to Code Lousiville, and my Code Louisville mentors: Michael Lindsay, Ryan Huntbach, and Neil Wehneman for your help and encouragement.");
+            Console.ReadKey();
+            Console.Clear();
+
+        }
        
     }
 

@@ -303,7 +303,7 @@ namespace Another_World_Adventure
             SlowTextAnimation("Researcher:                   Elizabeth Tong");
             SlowTextAnimation("Cool Person:                  Elizabeth Tong");
             Console.WriteLine("\n\n\n\n\n\n\n\n");
-            SlowTextAnimation("Special thanks to Code Lousiville, and my Code Louisville mentors: Michael Lindsay, Ryan Huntbach, and Neil Wehneman for your help and encouragement.");
+            SlowTextAnimation("Special thanks to Code Lousiville and my Code Louisville mentors: Michael Lindsay, Ryan Huntbach, and Neil Wehneman for your help and encouragement.");
             Console.ReadKey();
             Console.Clear();
 

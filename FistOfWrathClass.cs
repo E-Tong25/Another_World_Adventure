@@ -3,7 +3,7 @@ namespace Another_World_Adventure
 {
     public static class FistOfWrathClass
     {
-        public static BaseCharacterGuildClass FistOfWrath = new BaseCharacterGuildClass("Fist of Wrath", "\"There is never too much punching, they say. As a member of the Fist of Wrath Guild, you are surrounded by the strongest in the valley, always hungry for a good fight\".\n|    \"While you feel yourself increasing in strength, I doubt you will be reguarded as the Valley's Next Top Model.\"", 90, 50, 30);
+        public static BaseCharacterGuildClass FistOfWrath = new BaseCharacterGuildClass("Fist of Wrath", "\"There is never too much punching, they say. As a member of the Fist of Wrath Guild, you are surrounded by the strongest in the valley, always hungry for a good fight\".\n|    \"While you feel yourself increasing in strength, I doubt you will be regarded as the Valley's Next Top Model.\"", 90, 50, 30);
 
         public static void FistOfWrathGuildPlayerStatUpdate()
         {

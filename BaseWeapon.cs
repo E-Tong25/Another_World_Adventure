@@ -95,7 +95,7 @@ namespace Another_World_Adventure
             Console.WriteLine();
             Program.CynosCharacterDialog("\"Oh, so sorry. I didn't see you there.\"");
             Console.WriteLine();
-            Console.WriteLine("Help them? y/n");
+            Console.WriteLine("Help him? y/n");
 
             while (true)
             {
@@ -103,14 +103,14 @@ namespace Another_World_Adventure
 
                 if (helpCloakedFigureInput == "y" || helpCloakedFigureInput == "Y")
                 {
-                    Program.SlowTextAnimation("As you regain your footing, you help the cloaked figure gather their bags.");
+                    Program.SlowTextAnimation("As you regain your footing, you help the cloaked figure gather his bags.");
                     Console.WriteLine();
                     Program.CynosCharacterDialog("\"Why, thank you very much.\"");
                     break;
                 }
                 else if (helpCloakedFigureInput == "n" || helpCloakedFigureInput == "N")
                 {
-                    Program.SlowTextAnimation("Villagers walk past as the cloaked figure gathers their bags by themselves.");
+                    Program.SlowTextAnimation("Villagers walk past as the cloaked figure gathers his bags by himself.");
                     Console.WriteLine();
                     break;
                 }
@@ -118,13 +118,13 @@ namespace Another_World_Adventure
             Console.ReadKey();
             Console.Clear();
 
-            Program.SlowTextAnimation("The cloaked figure flings the heavy baggage over their shoulder, and you are able to snag a peak of their face behind the hood.");
-            Program.SlowTextAnimation("The facial structure isn't like a normal human, but rather resembles a dog or a jackle.\nA scar connects the forehead to their right eye, perhaps a reminder of a war from long ago.");
+            Program.SlowTextAnimation("The cloaked figure flings the heavy baggage over his shoulder, and you are able to snag a peak of his face.");
+            Program.SlowTextAnimation("The facial structure isn't like a normal human, but rather resembles a dog or a jackle.\nA scar connects the forehead to his right eye, perhaps a reminder of a war from long ago.");
             Console.WriteLine();
             Program.CynosCharacterDialog("\"Apologies again, friend. I had just traveled here from the mountains to trade some supplies I had in my possession.\"");
             Program.CynosCharacterDialog("\"My name is Cyno.\"\n\"I can't see like I used to in my younger years, so I've gotten a bit clumsier in my old age.\"");
             Console.WriteLine();
-            Program.SlowTextAnimation("He shines a friendly smile, but you can't help but see fatigue and sadness in their eyes.");
+            Program.SlowTextAnimation("He shines a friendly smile, but you can't help but see fatigue and sadness in his eyes.");
             Console.ReadKey();
             Console.Clear();
             Program.CynosCharacterDialog("\"You know, to show my sincerest apologies, you can take a look at some of my wares to see if there's something you like.\"\n\"I was going to get rid of them anyways.\"");

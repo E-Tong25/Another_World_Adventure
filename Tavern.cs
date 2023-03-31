@@ -145,7 +145,7 @@ namespace Another_World_Adventure
                     Program.SlowTextAnimation("The tavern keeper pours " + Wines.Assyrtiko.ItemName + " from a jug into a broad, relatively shallow pottery cup. The glossy black slip covering the inside and out, glistens as the wine fills to the brim.");
                     Program.SlowTextAnimation("Sliding the cup over to you, the keeper continues filling orders of the other patrons.");
                     Program.SlowTextAnimation("Cusping your hands around the two horizontal handles, you enjoy your " + Wines.Assyrtiko.ItemName + ". You eye a slave and women talking in the corner.");
-                    Program.QsCharacterDialog("\n\"It's nice to see that all kinds of walks of life are welcomed here.\"");
+                    Program.QsCharacterDialog("\n\"It's nice to see that all walks of life are welcomed here.\"");
                     Console.ReadKey();
                     Console.Clear();
                 }

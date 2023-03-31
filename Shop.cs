@@ -32,22 +32,22 @@ namespace Another_World_Adventure
                 Console.WriteLine();
                 Console.WriteLine(player.playerName + "'s Stats");
                 Console.WriteLine("=======================");
-                Console.WriteLine("| Current Health:       " + player.playerHealth);
+                Console.WriteLine("| Current Health:      " + player.playerHealth);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Current Hunger:       " + player.playerHunger);
-                Console.WriteLine("| Current Drunkness:    " + player.playerDrunkness);
+                Console.WriteLine("| Current Hunger:      " + player.playerHunger);
+                Console.WriteLine("| Current Drunkness:   " + player.playerDrunkness);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Guild Affiliation:    " + player.playerGuildName);
-                Console.WriteLine("| Strength Skill:       " + player.playerStrength);
-                Console.WriteLine("| Knowledge Skill:      " + player.playerKnowledge);
-                Console.WriteLine("| Charm Skill:          " + player.playerCharm);
+                Console.WriteLine("| Guild Affiliation:   " + player.playerGuildName);
+                Console.WriteLine("| Strength Skill:      " + player.playerStrength);
+                Console.WriteLine("| Knowledge Skill:     " + player.playerKnowledge);
+                Console.WriteLine("| Charm Skill:         " + player.playerCharm);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Weapon Name:          " + player.playerWeaponName);
-                Console.WriteLine("| Weapon Type:          " + player.playerWeaponType);
-                Console.WriteLine("| Weapon Strength:      " + player.playerWeaponStrength);
+                Console.WriteLine("| Weapon Name:         " + player.playerWeaponName);
+                Console.WriteLine("| Weapon Type:         " + player.playerWeaponType);
+                Console.WriteLine("| Weapon Strength:     " + player.playerWeaponStrength);
                 Console.WriteLine("| 			                                        ");
-                Console.WriteLine("| Potions:              " + player.playerHealthPotion);
-                Console.WriteLine("| Coins:                $" + player.playerCoins);
+                Console.WriteLine("| Potions:             " + player.playerHealthPotion);
+                Console.WriteLine("| Coins:               $" + player.playerCoins);
                 Console.WriteLine("=======================");
                 Console.WriteLine();
                 Console.WriteLine();
@@ -94,7 +94,7 @@ namespace Another_World_Adventure
             if (player.playerCoins >= cost)
             {
                 if (item == "potion")
-                    player.playerHealthPotion++;
+                    ++player.playerHealthPotion;
                 else if (item == "trade weapon sword")
                     BaseWeapon.SwordWeaponPlayerStatUpdate();
                 else if (item == "trade weapon bow")
@@ -126,7 +126,7 @@ namespace Another_World_Adventure
                 Console.WriteLine("----------------------------------------------------------------");
                 Console.WriteLine("|  Potions:                        ");
                 Console.WriteLine("|                                  ");
-                Console.WriteLine("|    " + Potions.Ambrosia.ItemName + "   $" + Potions.Ambrosia.ItemPrice);
+                Console.WriteLine("|    " + Potions.Ambrosia.ItemName + "b -  $" + Potions.Ambrosia.ItemPrice);
                 Console.WriteLine("|    Description: " + Potions.Ambrosia.ItemDescription);
                 Console.WriteLine("|                                  ");
                 Console.WriteLine("|  (B)uy Potion                    ");
@@ -171,8 +171,10 @@ namespace Another_World_Adventure
                     {
                         TryBuy("potion", Potions.Ambrosia.ItemPrice, player);
 
-                        Program.SlowTextAnimation("You hand the shop keep " +Potions.Ambrosia.ItemPrice+ " and put the " + Potions.Ambrosia.ItemName + " into your small pouch.");
+                        Program.SlowTextAnimation("You hand the shop keeper " +Potions.Ambrosia.ItemPrice+ " coins and put the " + Potions.Ambrosia.ItemName + " into your small pouch.");
                         BaseWeapon.AmbrosiaPotionPlayerStatUpdate();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     }
                     else if (potionShopInventoryInput == "g" || potionShopInventoryInput == "G" || potionShopInventoryInput == "go back" || potionShopInventoryInput == "Go Back")
@@ -186,7 +188,7 @@ namespace Another_World_Adventure
                     }
                     else
                     {
-                        Program.QsCharacterDialog("Please type sword, bow, spear, or potion.");
+                        Program.SlowTextAnimation("Please type b to buy potion or g to go back to the main shop menu.");
                         Console.ReadKey();
                         Console.Clear();
                         continue;
@@ -251,14 +253,12 @@ namespace Another_World_Adventure
 
                 while (true)
                 {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Which item from Cyno's bag do you want to add to your inventory?");
                     string? weaponShopInventoryInput = Console.ReadLine();
 
                     if (weaponShopInventoryInput == "a" || weaponShopInventoryInput == "A" || weaponShopInventoryInput == "Hephaestus' Sword" || weaponShopInventoryInput == "hephaestus' sword")
                     {
                         TryBuy("trade weapon sword", weaponTradePrice, player);
-                        Program.SlowTextAnimation("You pull " + Weapons.HephaestusSword.ItemName + " out of the bag and holster it to your waist.");
+                        Program.SlowTextAnimation("The shop keeper pulls " + Weapons.HephaestusSword.ItemName + " out of the display case and trades it for your " +Program.currentPlayer.playerWeaponName+ ".");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -291,7 +291,7 @@ namespace Another_World_Adventure
                     }
                     else
                     {
-                        Program.QsCharacterDialog("Please type sword, bow, or spear.");
+                        Program.SlowTextAnimation("Please type sword, bow, or spear.");
                         Console.ReadKey();
                         continue;
                     }

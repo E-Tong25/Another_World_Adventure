@@ -23,7 +23,7 @@ namespace Another_World_Adventure
         {
             TakingTheDragonQuest();
             Console.Clear();
-            Program.SlowTextAnimation("As you got closer, you come to the large, ancient tree where a giant serpent-like dragon is wrapped around it.\n");
+            Program.SlowTextAnimation("As you get closer, you come to the large, ancient tree where a giant serpent-like dragon is wrapped around it.\n");
             Program.LadonsCharacterDialog("\"A human? Ladon the Dragon, the protector of the Golden Apple Tree, has not seen a human here for quite some time. What do you want child?\"\n");
             Program.QsCharacterDialog("\"So what now? I would suggest choosing carefully.\"\n\n\"Although, I hope you choose the wrong one like an idiot, it would be more entertaining for me.\"\n\n");
             FightingChoiceDragonEncounter(Program.currentPlayer);
@@ -413,6 +413,7 @@ namespace Another_World_Adventure
                             enemyAttack = 0;
                         Program.SlowTextAnimation("You lose " + enemyAttack + "health.");
                         Program.currentPlayer.playerHealth -= enemyAttack;
+                        Program.currentPlayer.playerHealthPotion -= 1;
 
                     }
                     Console.ReadKey();
@@ -462,10 +463,12 @@ namespace Another_World_Adventure
                 string arenaContinueInput = Console.ReadLine();
                 if (arenaContinueInput == "y" || arenaContinueInput == "Y" || arenaContinueInput == "yes" || arenaContinueInput == "Yes")
                 {
+                    Console.Clear();
                     ArenaEncounter();
                 }
                 else if (arenaContinueInput == "n" || arenaContinueInput == "N" || arenaContinueInput == "no" || arenaContinueInput == "No")
                 {
+                    Console.Clear();
                     Locations.LoadAllLocationsMenu();
                 }
                 else if (arenaContinueInput == "")
@@ -489,6 +492,7 @@ namespace Another_World_Adventure
             Console.WriteLine("FYI: ");
             Console.WriteLine("There is totally no danger in this job. Yep, none wahtsoever.");
             Console.WriteLine("---------------------------------------------------\n");
+            Console.ReadKey();
             Program.QsCharacterDialog("\"Sounds promising, I think you should do it.\"\n\"It can raise your cool score, which you desperately need.\"");
             Console.ReadKey();
             Console.Clear();
@@ -572,7 +576,7 @@ namespace Another_World_Adventure
 
         public static void CompletingDragonQuest()
         {
-            Program.SlowTextAnimation("Ladon has been subdued and you are able to approach the Gold Apple Tree.");
+            Program.SlowTextAnimation("Ladon has been subdued and you are able to approach the Golden Apple Tree.");
             Program.SlowTextAnimation("You reach for one on a lower branch, and you manage to pluck it off. The apple is rather large, the gold exterior makes it a beauty to behold.\n");
             Program.QsCharacterDialog("\"Congrats on accomplishing the quest! How exciting. I guess the only thing now is to return it to the one who requested the task.\"\n");
             Console.ReadKey();
@@ -584,7 +588,7 @@ namespace Another_World_Adventure
             Program.currentPlayer.playerCoins += coinsReward;
             Console.ReadKey();
             Console.Clear();
-            Program.SlowTextAnimation("You walk back to the village, after a long journey. You are amazed at this new, another world life.");
+            Program.SlowTextAnimation("You walk back to the village, after a long journey. You are amazed at this new, another world and are excited for whatever the future holds.\nWhether the times be good or bad, at least they are opportunties to see the world in a new light.");
             Console.ReadKey();
             Console.Clear();
         }

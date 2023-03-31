@@ -3,7 +3,7 @@ namespace Another_World_Adventure
 {
 	public static class StellarsOfTongueClass
 	{
-        public static BaseCharacterGuildClass StellarsOfTongue = new BaseCharacterGuildClass("Stellars Of Tongue", "\"Beauty and charm is everything in this world. As a memeber of the Stellars Of Tongue Guild, festivitees formed by the valley's most beautiful and lusted are an everyday occurrence.\"\n|   \"Others around you flock to admire your beauty, but I doubt they'd come to you for stock advice.\"", 50, 30, 90);
+        public static BaseCharacterGuildClass StellarsOfTongue = new BaseCharacterGuildClass("Stellars Of Tongue", "\"Beauty and charm is everything in this world. As a member of the Stellars Of Tongue Guild, festivities formed by the valley's most beautiful and lusted are an everyday occurrence.\"\n|   \"Others around you flock to admire your beauty, but I doubt they'd come to you for stock advice.\"", 50, 30, 90);
 
         public static void StellarsOfTongueGuildPlayerStatUpdate()
         {

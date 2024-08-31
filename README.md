@@ -1,4 +1,4 @@
-![](/img/logo-ascii-text-art.jpg)
+![](Img/logo-ascii-text-art.jpg)
 
 Combining my love of Ancient Mythology, video games, and Isekais, I created a text-based, "choose-your-own-adventure" console application where the user enters into a new world, after being reincarnated, joins a guild, goes on quests, meets characters, fights in arenas, and shops and eats at the local tavern and shop.
 

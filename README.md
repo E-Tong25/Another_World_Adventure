@@ -1,9 +1,4 @@
-#  ___              _   _                  _    _            _     _      ___      _                 _                  
-# / _ \            | | | |                | |  | |          | |   | |    / _ \    | |               | |                 
-#/ /_\ \_ __   ___ | |_| |__   ___ _ __   | |  | | ___  _ __| | __| |   / /_\ \ __| |_   _____ _ __ | |_ _   _ _ __ ___
-#|  _  | '_ \ / _ \| __| '_ \ / _ \ '__|  | |/\| |/ _ \| '__| |/ _` |   |  _  |/ _` \ \ / / _ \ '_ \| __| | | | '__/ _ \
-#| | | | | | | (_) | |_| | | |  __/ |     \  /\  / (_) | |  | | (_| |   | | | | (_| |\ V /  __/ | | | |_| |_| | | |  __/
-#\_| |_/_| |_|\___/ \__|_| |_|\___|_|      \/  \/ \___/|_|  |_|\__,_|   \_| |_/\__,_| \_/ \___|_| |_|\__|\__,_|_|  \___|
+![](/img/logo-ascii-text-art.jpg)
 
 Combining my love of Ancient Mythology, video games, and Isekais, I created a text-based, "choose-your-own-adventure" console application where the user enters into a new world, after being reincarnated, joins a guild, goes on quests, meets characters, fights in arenas, and shops and eats at the local tavern and shop.
 
